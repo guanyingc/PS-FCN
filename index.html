@@ -1,0 +1,212 @@
+<script src="http://www.google.com/jsapi" type="text/javascript"></script> 
+<script type="text/javascript">google.load("jquery", "1.3.2");</script>
+
+<style type="text/css">
+body {
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+    font-weight:300;
+    font-size:18px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 1000px;
+}	
+h1 {
+    font-weight:300;
+}
+
+.disclaimerbox {
+    background-color: #eee;		
+    border: 1px solid #eeeeee;
+    border-radius: 10px ;
+    -moz-border-radius: 10px ;
+    -webkit-border-radius: 10px ;
+    padding: 20px;
+}
+
+video.header-vid {
+    height: 140px;
+    border: 1px solid black;
+    border-radius: 10px ;
+    -moz-border-radius: 10px ;
+    -webkit-border-radius: 10px ;
+}
+
+img.header-img {
+    height: 140px;
+    border: 1px solid black;
+    border-radius: 10px ;
+    -moz-border-radius: 10px ;
+    -webkit-border-radius: 10px ;
+}
+
+img.rounded {
+    border: 0px solid #eeeeee;
+    border-radius: 10px ;
+    -moz-border-radius: 10px ;
+    -webkit-border-radius: 10px ;
+}
+
+a:link,a:visited
+{
+    color: #1367a7;
+    text-decoration: none;
+}
+a:hover {
+    color: #208799;
+  }
+
+  td.dl-link {
+      height: 160px;
+      text-align: center;
+      font-size: 22px;
+  }
+
+  .vert-cent {
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+  }
+
+  hr
+  {
+      border: 0;
+      height: 1px;
+      background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+  }
+</style>
+
+<html>
+<head>
+<title>PS-FCN: A Flexible Learning Framework for Photometric Stereo</title>
+<meta property="og:image" content="https://github.com/guanyingc/PS-FCN/blob/gh-pages/files/ECCV2018_PS-FCN.png"/> <!--TODO-->
+<meta property="og:title" content="PS-FCN: A Flexible Learning Framework for Photometric Stereo, In ECCV 2018." />
+</head>
+
+<body>
+<br>
+<center>
+    <span style="font-size:42px">PS-FCN: A Flexible Learning Framework for Photometric Stereo</span><br>
+    <table align=center width=800px>
+        <tr>
+            <td align=center width=100px>
+                <span style="font-size:24px"><a href="http://www.gychen.org">Guanying Chen<sup>1</sup></a></span>
+            </td>
+            <td align=center width=100px>
+                <span style="font-size:24px"><a href="http://www.hankai.org/">Kai Han<sup>2</sup></a></span>
+            </td>
+            <td align=center width=100px>
+                <span style="font-size:24px"><a href="http://i.cs.hku.hk/~kykwong/">Kwan-Yee K. Wong<sup>1</sup></a></span>
+            </td>
+        </tr>
+    </table>
+    <table align=center width=800px>
+        <td align=center width=300px>
+            <span style="font-size:22px">The University of Hong Kong<sup>1</sup>, University of Oxford<sup>2</sup></span>
+        </td>
+    </table>
+    <table align=center width=900px>
+        <tr>
+            <td align=center width=300px>
+                <center>
+                    <span style="font-size:22px">Code [PyTorch]</span>
+                    <!--<span style="font-size:22px"><a href='https://github.com/guanyingc/PS-FCN'> Code [PyTorch] </a></span>-->
+                </center>
+            </td>
+            <td align=center width=300px>
+                <center>
+                    <span style="font-size:22px"><a href='https://arxiv.org/pdf/1807.08696.pdf'> Paper [ECCV 2018] </a></span> <!--TODO-->
+                </center>
+            </td>
+              <td align=center width=300px>
+                <center>
+                    <span style="font-size:22px"><a href='https://github.com/guanyingc/PS-FCN_Poster_LaTex/blob/master/poster_landscape.pdf'> Poster [GitHub]</a></span>
+                </center>
+              </td>
+        </tr>
+    </table>
+</center>
+<br>
+
+<table align=center width=900px>
+    <tr>
+        <td align=center width=900px>
+            <img class="rounded" style="width:800px" src = "./files/ECCV2018_PS-FCN.png">
+        </td>
+    </tr> </table>
+
+<br>
+<hr>
+
+<table align=center width=900px>
+    <center><h1>Abstract</h1></center>
+    <p>This paper addresses the problem of photometric stereo for non-Lambertian surfaces. Existing approaches often adopt simplified reflectance models to make the problem more tractable, but this greatly hinders their applications on real-world objects. In this paper, we propose a deep fully convolutional network, called PS-FCN, that takes an arbitrary number of images of a static object captured under different light directions with a fixed camera as input, and predicts a normal map of the object in a fast feed-forward pass. Unlike the recently proposed learning based method, PS-FCN does not require a pre-defined set of light directions during training and testing, and can handle multiple images and light directions in an order-agnostic manner. Although we train PS-FCN on synthetic data, it can generalize well to real datasets. We further show that PS-FCN can be easily extended to handle the problem of uncalibrated photometric stereo. Extensive experiments on public real datasets show that PS-FCN outperforms existing approaches in calibrated photometric stereo, and promising results are achieved in uncalibrated scenario, clearly demonstrating its effectiveness.</p>
+    <center><iframe width="560" height="315" src="https://www.youtube.com/embed/FFL1pZ7z9nI" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></center>
+</table>
+<hr>
+
+<table align=center>
+    <center><h1>Method</h1></center>
+    <tr>
+        <td align=center width=900px>
+            <img class="round" style="width:800px" src="./files/ECCV2018_framework.png"/></img>
+        </td>
+    </tr>
+</table>
+<hr>
+
+<table align=center>
+    <center><h1>Training Dataset</h1></center>
+    <tr>
+        <td align=center>
+            <img class="round" style="width:800px" src="./files/data.png"/>
+        </td>
+    </tr>
+</table>
+<hr>
+
+<table align=center>
+    <center><h1>Results</h1></center>
+    <center><h2>Results on DiLiGenT Main Dataset.</h2></center>
+    <table align=center>
+        <tr>
+            <td align=center>
+                <img class="round" style="width:800px" src="./files/diligent_main_qual.png"/>
+            </td>
+        </tr>
+        <tr>
+            <td align=center>
+                <img class="round" style="width:800px" src="./files/diligent_main_quant.png"/>
+            </td>
+        </tr>
+    </table>
+
+    <table align=center>
+        <center><h2>Results on Gourd&Apple and Light Stage Data Gallery.</h2></center>
+        <td align=center>
+            <img class="round" style="width:800px" src="./files/gourd_stage.png"/>
+        </td>
+    </table>
+</table>
+
+<br>
+<hr>
+<center>
+    <!--<h3>Code, models and datasets are available at <a href="https://github.com/guanyingc/PS-FCN">Github</a>!</h3>-->
+    <h3>Code, models and datasets will be available soon.</h3>
+</center>
+<hr>
+
+<table align=center width=1000px>
+    <tr>
+        <td width=400px>
+            <left>
+            <center><h1>Acknowledgments</h1></center>
+We thank Hiroaki Santo for his help with the comparison to DPSN. We also thank Boxin Shi and Zhipeng Mo for their help with the evaluation on the DiLiGenT benchmark. We gratefully acknowledge the support of NVIDIA Corporation with the donation of the Titan X Pascal GPU used for this research. Kai Han is supported by EPSRC Programme Grant Seebibyte EP/M013774/1.
+            </left>
+        </td>
+    </tr>
+</table>
+<br><br>
+
+</body>
+</html>
