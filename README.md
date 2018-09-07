@@ -13,7 +13,7 @@ This paper addresses the problem of learning based photometric stereo for non-La
 ### Dependencies
 PS-FCN is implemented in [PyTorch](https://pytorch.org/) and tested with Ubuntu 14.04, please install PyTorch first following the official instruction. 
 - Python 2.7 
-- PyTorch (version > 0.40)
+- PyTorch (version >= 0.40)
 - numpy
 - scipy
 - CUDA-8.0  
