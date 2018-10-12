@@ -13,7 +13,7 @@ This paper addresses the problem of learning based photometric stereo for non-La
 ### Dependencies
 PS-FCN is implemented in [PyTorch](https://pytorch.org/) and tested with Ubuntu 14.04, please install PyTorch first following the official instruction. 
 - Python 2.7 
-- PyTorch (version >= 0.40)
+- PyTorch (version = 0.40)
 - numpy
 - scipy
 - CUDA-8.0  
@@ -50,7 +50,7 @@ To train a new PS-FCN model, you have to follow the following steps:
 #### Download the training data
 ```shell
 # The total size of the zipped synthetic datasets is 4.7+19=23.7 GB 
-# and it take some times to download and unzip the datasets.
+# and it takes some times to download and unzip the datasets.
 sh scripts/download_synthetic_datasets.sh
 ```
 
