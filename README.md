@@ -10,13 +10,17 @@ This paper addresses the problem of learning based photometric stereo for non-La
     <img src='images/ECCV2018_PS-FCN.png' width="800" >
 </p>
 
+### Changelog
+- July 27, 2019: We have already updated this code to support Python 3.7 + PyTorch 1.10. To run the previous version (Python 2.7 + PyTorch 0.40), please checkout to `python2.7` branch first (e.g., `git checkout python2.7`).
+
+
 ### Dependencies
 PS-FCN is implemented in [PyTorch](https://pytorch.org/) and tested with Ubuntu 14.04, please install PyTorch first following the official instruction. 
-- Python 2.7 
-- PyTorch (version = 0.40)
+- Python 3.7 
+- PyTorch (version = 1.10)
 - numpy
 - scipy
-- CUDA-8.0  
+- CUDA-9.0  
 
 ## Overview:
 We provide:
