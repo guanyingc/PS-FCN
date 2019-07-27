@@ -11,5 +11,5 @@ def calNormalAcc(gt_n, pred_n, mask=None):
     valid = mask.narrow(1, 0, 1).sum()
     ang_valid   = angular_map[mask.narrow(1, 0, 1).squeeze(1).byte()]
     n_err_mean  = ang_valid.sum() / valid
-    value = {'n_err_mean': n_err_mean }
+    value = {'n_err_mean': n_err_mean.item()}
     return value

@@ -20,7 +20,7 @@ class Criterion(object):
 
     def forward(self, output, target):
         if self.normal_loss == 'cos':
-            num = target.nelement() / target.shape[1]
+            num = target.nelement() // target.shape[1]
             if not hasattr(self, 'flag') or num != self.flag.nelement():
                 self.flag = torch.autograd.Variable(target.data.new().resize_(num).fill_(1))
 

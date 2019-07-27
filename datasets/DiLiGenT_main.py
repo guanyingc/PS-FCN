@@ -1,14 +1,15 @@
 from __future__ import division
 import os
 import numpy as np
-from scipy.ndimage import imread
+#from scipy.ndimage import imread
+from imageio import imread
 import scipy.io as sio
 
 import torch
 import torch.utils.data as data
 
 from datasets import pms_transforms
-import util
+from . import util
 np.random.seed(0)
 
 class DiLiGenT_main(data.Dataset):
