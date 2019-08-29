@@ -10,7 +10,7 @@ This paper addresses the problem of learning based photometric stereo for non-La
     <img src='images/ECCV2018_PS-FCN.png' width="800" >
 </p>
 
-### Changelog
+### _Changelog_
 - July 27, 2019: We have already updated the code to support Python 3.7 + PyTorch 1.10. To run the previous version (Python 2.7 + PyTorch 0.40), please checkout to `python2.7` branch first (e.g., `git checkout python2.7`).
 
 
