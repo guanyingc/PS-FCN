@@ -58,7 +58,7 @@ To train a new PS-FCN model, please follow the following steps:
 sh scripts/download_synthetic_datasets.sh
 ```
 
-#### Run `main.py` to train PS-FCN or UPS-FCN
+#### Train PS-FCN and UPS-FCN
 ```shell
 # Train PS-FCN on both synthetic datasets using 32 images-light pairs
 CUDA_VISIBLE_DEVICES=0 python main.py --concat_data --in_img_num 32
