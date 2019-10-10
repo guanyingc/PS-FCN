@@ -36,6 +36,7 @@ We provide:
 ```
 sh scripts/download_pretrained_models.sh
 ```
+If the above command is not working, please manually download the trained models from Google Drive ([PS-FCN and UPS-FCN](https://drive.google.com/drive/folders/1VxrPsV8Pg28JCcMZklW1LcBFm4crhK0F?usp=sharing)) and put them in `./data/models/`.
 
 #### Test on the DiLiGenT main dataset
 ```shell
@@ -57,6 +58,7 @@ To train a new PS-FCN model, please follow the following steps:
 # and it takes some times to download and unzip the datasets.
 sh scripts/download_synthetic_datasets.sh
 ```
+If the above command is not working, please manually download the training datasets from Google Drive ([PS Sculpture Dataset and PS Blobby Dataset](https://drive.google.com/drive/folders/1VxrPsV8Pg28JCcMZklW1LcBFm4crhK0F?usp=sharing)) and put them in `./data/datasets/`. 
 
 #### Train PS-FCN and UPS-FCN
 ```shell
