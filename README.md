@@ -87,6 +87,9 @@ CUDA_VISIBLE_DEVICES=0 python main.py --concat_data --in_img_num 32 --in_light -
 #### Q3: What should I do if I have problem in running your code?
 - Please create an issue if you encounter errors when trying to run the code. Please also feel free to submit a bug report.
 
+#### Q4: Where can I download the Gourd&Apple dataset and Light Stage Data Gallery used in the paper?
+- Gourd&Apple dataset is introduced in the paper [Photometric stereo with non-parametric and spatially-varying reflectance, Alldrin et al., CVPR 2008]. You may try to download this dataset from [Alldrin's homepage](http://vision.ucsd.edu/~nalldrin/research/). However, it seems that this link is not working now. You may send an email to the authors for this dataset. You can download the Light Stage Data Gallery from http://vgl.ict.usc.edu/Data/LightStage/. To test PS-FCN on these two datasets, please first preprocess and reorganize the images in a way similar to DiLiGent benchmark. 
+
 ## Citation
 If you find this code or the provided data useful in your research, please consider cite: 
 ```
