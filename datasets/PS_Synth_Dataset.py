@@ -51,14 +51,21 @@ class PS_Synth_Dataset(data.Dataset):
         if self.args.crop:
             img, normal = pms_transforms.randomCrop(img, normal, [crop_h, crop_w])
 
-        if self.args.color_aug:
+        if self.args.color_aug and not self.args.normalize:
             img = (img * np.random.uniform(1, 3)).clip(0, 2)
+
+        if self.args.normalize:
+            imgs = np.split(img, img.shape[2]//3, 2)
+            imgs = pms_transforms.normalize(imgs)
+            img = np.concatenate(imgs, 2)
 
         if self.args.noise_aug:
             img = pms_transforms.randomNoiseAug(img, self.args.noise)
 
         mask   = pms_transforms.normalToMask(normal)
         normal = normal * mask.repeat(3, 2)
+        norm  = np.sqrt((normal * normal).sum(2, keepdims=True))
+        normal = normal / (norm + 1e-10)
 
         item = {'N': normal, 'img': img, 'mask': mask}
         for k in item.keys(): 

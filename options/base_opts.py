@@ -13,8 +13,10 @@ class BaseOpts(object):
 
         #### Model Arguments ####
         self.parser.add_argument('--fuse_type',  default='max')
+        self.parser.add_argument('--normalize',  default=False, action='store_true')
         self.parser.add_argument('--in_light',   default=True,  action='store_false')
         self.parser.add_argument('--use_BN',     default=False, action='store_true')
+        self.parser.add_argument('--train_img_num', default=32, type=int) # for data normalization
         self.parser.add_argument('--in_img_num', default=32,    type=int)
         self.parser.add_argument('--start_epoch',default=1,     type=int)
         self.parser.add_argument('--epochs',     default=30,    type=int)
