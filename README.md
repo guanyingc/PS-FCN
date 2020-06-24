@@ -11,6 +11,7 @@ This paper addresses the problem of learning based photometric stereo for non-La
 </p>
 
 ### _Changelog_
+- June 25, 2020: We have updated the code to support applying data normalization for handling surface with SVBRDFs, as introduced in the journal version of this work.
 - July 27, 2019: We have already updated the code to support Python 3.7 + PyTorch 1.10. To run the previous version (Python 2.7 + PyTorch 0.40), please checkout to `python2.7` branch first (e.g., `git checkout python2.7`).
 
 
@@ -72,6 +73,26 @@ CUDA_VISIBLE_DEVICES=0 python main.py --concat_data --in_img_num 32 --in_light -
 
 # You can find checkpoints and results in data/Training/
 ```
+
+## Data Normalization for Handling SVBRDFs (TPAMI 2020)
+#### Download the trained models
+```
+sh scripts/download_pretrained_TPAMI_models.sh
+If the above command is not working, please manually download the trained model from Google Drive ([PS-FCN_normalize](https://drive.google.com/drive/folders/1VxrPsV8Pg28JCcMZklW1LcBFm4crhK0F?usp=sharing)) and put them in `./data/models/`.
+```
+#### Test on the DiLiGenT main dataset
+```
+CUDA_VISIBLE_DEVICES=0 python eval/run_model.py --retrain data/models/PS-FCN_B_S_32_normalize.pth.tar --in_img_num 96 --normalize --train_img_num 32
+```
+#### Training
+```
+CUDA_VISIBLE_DEVICES=0 python main.py --concat_data --in_img_num 32 --normalize
+```
+
+<br>
+<p align="center">
+    <img src='images/PS-FCN_normalize.jpg' width="700" >
+</p>
 
 ## FAQ
 
