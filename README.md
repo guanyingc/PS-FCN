@@ -78,8 +78,9 @@ CUDA_VISIBLE_DEVICES=0 python main.py --concat_data --in_img_num 32 --in_light -
 #### Download the trained models
 ```
 sh scripts/download_pretrained_TPAMI_models.sh
-If the above command is not working, please manually download the trained model from Google Drive ([PS-FCN_normalize](https://drive.google.com/drive/folders/1VxrPsV8Pg28JCcMZklW1LcBFm4crhK0F?usp=sharing)) and put them in `./data/models/`.
 ```
+If the above command is not working, please manually download the trained model from Google Drive ([PS-FCN_normalize](https://drive.google.com/drive/folders/1VxrPsV8Pg28JCcMZklW1LcBFm4crhK0F?usp=sharing)) and put it in `./data/models/`.
+
 #### Test on the DiLiGenT main dataset
 ```
 CUDA_VISIBLE_DEVICES=0 python eval/run_model.py --retrain data/models/PS-FCN_B_S_32_normalize.pth.tar --in_img_num 96 --normalize --train_img_num 32
@@ -115,9 +116,15 @@ CUDA_VISIBLE_DEVICES=0 python main.py --concat_data --in_img_num 32 --normalize
 If you find this code or the provided data useful in your research, please consider cite: 
 ```
 @inproceedings{chen2018ps,
-  title={PS-FCN: A Flexible Learning Framework for Photometric Stereo},
+  title={{PS-FCN}: A Flexible Learning Framework for Photometric Stereo},
   author={Chen, Guanying and Han, Kai and Wong, Kwan-Yee K.},
   booktitle={ECCV},
   year={2018}
+  }
+@article{chen2020deepps,
+  title={Deep Photometric Stereo for Non-{Lambertian} Surfaces},
+  author={Chen, Guanying and Han, Kai and Shi, Boxin and Matsushita, Yasuyuki and Wong, Kwan-Yee K.},
+  journal=TPAMI,
+  year={2020},
 }
 ```
