@@ -47,4 +47,5 @@ class TrainOpts(BaseOpts):
 
     def parse(self):
         BaseOpts.parse(self)
+        self.args.train_img_num = self.args.in_img_num # for data normalization
         return self.args

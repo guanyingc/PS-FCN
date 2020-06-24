@@ -52,7 +52,11 @@ class DiLiGenT_main(data.Dataset):
             img = imread(img_name).astype(np.float32) / 255.0
             img = np.dot(img, intens[idx])
             imgs.append(img)
+        if self.args.normalize:
+            imgs = pms_transforms.normalize(imgs)
         img = np.concatenate(imgs, 2)
+        if self.args.normalize:
+            img = img * np.sqrt(len(imgs) / self.args.train_img_num) # TODO
 
         mask = self._getMask(obj)
         down = 4

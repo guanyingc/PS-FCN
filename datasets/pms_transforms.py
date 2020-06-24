@@ -53,3 +53,14 @@ def randomNoiseAug(inputs, noise_level=0.05):
     noise = (noise - 0.5) * noise_level
     inputs += noise
     return inputs
+
+def normalize(imgs):
+    h, w, c = imgs[0].shape
+    imgs = [img.reshape(-1, 1) for img in imgs]
+    img = np.hstack(imgs)
+    norm = np.sqrt((img * img).clip(0.0).sum(1))
+    img = img / (norm.reshape(-1,1) + 1e-10)
+    imgs = np.split(img, img.shape[1], axis=1)
+    imgs = [img.reshape(h, w, -1) for img in imgs]
+    return imgs
+
