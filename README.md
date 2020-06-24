@@ -124,7 +124,7 @@ If you find this code or the provided data useful in your research, please consi
 @article{chen2020deepps,
   title={Deep Photometric Stereo for Non-{Lambertian} Surfaces},
   author={Chen, Guanying and Han, Kai and Shi, Boxin and Matsushita, Yasuyuki and Wong, Kwan-Yee K.},
-  journal=TPAMI,
+  journal={TPAMI},
   year={2020},
 }
 ```
