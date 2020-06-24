@@ -4,17 +4,17 @@
 [Guanying Chen](http://www.gychen.org), [Kai Han](http://www.hankai.org/), [Kwan-Yee K. Wong](http://i.cs.hku.hk/~kykwong/)
 <br>
 
-This paper addresses the problem of learning based photometric stereo for non-Lambertian surface:
+This paper addresses the problem of learning based photometric stereo for non-Lambertian surface.
 <br>
 <p align="center">
     <img src='images/ECCV2018_PS-FCN.png' width="800" >
 </p>
 
-### Changelog
-- July 27, 2019: We have already updated this code to support Python 3.7 + PyTorch 1.10. To run the previous version (Python 2.7 + PyTorch 0.40), please checkout to `python2.7` branch first (e.g., `git checkout python2.7`).
+### _Changelog_
+- July 27, 2019: We have already updated the code to support Python 3.7 + PyTorch 1.10. To run the previous version (Python 2.7 + PyTorch 0.40), please checkout to `python2.7` branch first (e.g., `git checkout python2.7`).
 
 
-### Dependencies
+## Dependencies
 PS-FCN is implemented in [PyTorch](https://pytorch.org/) and tested with Ubuntu 14.04, please install PyTorch first following the official instruction. 
 - Python 3.7 
 - PyTorch (version = 1.10)
@@ -22,10 +22,10 @@ PS-FCN is implemented in [PyTorch](https://pytorch.org/) and tested with Ubuntu 
 - scipy
 - CUDA-9.0  
 
-## Overview:
+## Overview
 We provide:
 - Datasets: Blobby dataset (4.7 GB), Sculpture dataset (19 GB)
-- Trained models (trained on both the Blobby dataset and the Sculpture dataset with a per-sample input number of 32):
+- Trained models (on both the Blobby dataset and the Sculpture dataset with a per-sample input number of 32):
     - PS-FCN for calibrated photometric stereo
     - UPS-FCN for uncalibrated photometric stereo
 - Code to test on DiLiGenT main dataset
@@ -36,6 +36,7 @@ We provide:
 ```
 sh scripts/download_pretrained_models.sh
 ```
+If the above command is not working, please manually download the trained models from Google Drive ([PS-FCN and UPS-FCN](https://drive.google.com/drive/folders/1VxrPsV8Pg28JCcMZklW1LcBFm4crhK0F?usp=sharing)) and put them in `./data/models/`.
 
 #### Test on the DiLiGenT main dataset
 ```shell
@@ -50,15 +51,16 @@ CUDA_VISIBLE_DEVICES=0 python eval/run_model.py --retrain data/models/UPS-FCN_B_
 ```
 
 ## Training
-To train a new PS-FCN model, you have to follow the following steps:
+To train a new PS-FCN model, please follow the following steps:
 #### Download the training data
 ```shell
 # The total size of the zipped synthetic datasets is 4.7+19=23.7 GB 
 # and it takes some times to download and unzip the datasets.
 sh scripts/download_synthetic_datasets.sh
 ```
+If the above command is not working, please manually download the training datasets from Google Drive ([PS Sculpture Dataset and PS Blobby Dataset](https://drive.google.com/drive/folders/1VxrPsV8Pg28JCcMZklW1LcBFm4crhK0F?usp=sharing)) and put them in `./data/datasets/`. 
 
-#### Call `main.py` to train PS-FCN or UPS-FCN
+#### Train PS-FCN and UPS-FCN
 ```shell
 # Train PS-FCN on both synthetic datasets using 32 images-light pairs
 CUDA_VISIBLE_DEVICES=0 python main.py --concat_data --in_img_num 32
@@ -84,6 +86,9 @@ CUDA_VISIBLE_DEVICES=0 python main.py --concat_data --in_img_num 32 --in_light -
 
 #### Q3: What should I do if I have problem in running your code?
 - Please create an issue if you encounter errors when trying to run the code. Please also feel free to submit a bug report.
+
+#### Q4: Where can I download the Gourd&Apple dataset and Light Stage Data Gallery used in the paper?
+- Gourd&Apple dataset is introduced in the paper [Photometric stereo with non-parametric and spatially-varying reflectance, Alldrin et al., CVPR 2008]. You may try to download this dataset from [Alldrin's homepage](http://vision.ucsd.edu/~nalldrin/research/). However, it seems that this link is not working now. You may send an email to the authors for this dataset. You can download the Light Stage Data Gallery from http://vgl.ict.usc.edu/Data/LightStage/. To test PS-FCN on these two datasets, please first preprocess and reorganize the images in a way similar to DiLiGent benchmark. 
 
 ## Citation
 If you find this code or the provided data useful in your research, please consider cite: 
