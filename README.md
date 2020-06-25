@@ -34,8 +34,9 @@ We provide:
 
 ## Testing
 #### Download the trained models
-```
+```shell
 sh scripts/download_pretrained_models.sh
+# You can find the downloaded model in ./data/models/
 ```
 If the above command is not working, please manually download the trained models from Google Drive ([PS-FCN and UPS-FCN](https://drive.google.com/drive/folders/1VxrPsV8Pg28JCcMZklW1LcBFm4crhK0F?usp=sharing)) and put them in `./data/models/`.
 
@@ -77,18 +78,20 @@ CUDA_VISIBLE_DEVICES=0 python main.py --concat_data --in_img_num 32 --in_light -
 
 ## Data Normalization for Handling SVBRDFs (TPAMI 2020)
 #### Download the trained models
-```
+```shell
 sh scripts/download_pretrained_TPAMI_models.sh
+# You can find the downloaded model in ./data/models/
 ```
 If the above command is not working, please manually download the trained model from Google Drive ([PS-FCN_normalize](https://drive.google.com/drive/folders/1VxrPsV8Pg28JCcMZklW1LcBFm4crhK0F?usp=sharing)) and put it in `./data/models/`.
 
 #### Test on the DiLiGenT main dataset
-```
+```shell
 CUDA_VISIBLE_DEVICES=0 python eval/run_model.py --retrain data/models/PS-FCN_B_S_32_normalize.pth.tar --in_img_num 96 --normalize --train_img_num 32
 # You can find the results in data/Training/run_model
 ```
+
 #### Training
-```
+```shell
 CUDA_VISIBLE_DEVICES=0 python main.py --concat_data --in_img_num 32 --normalize --item normalize
 # You can find checkpoints and results in data/Training/normalize
 ```
