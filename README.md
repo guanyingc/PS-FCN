@@ -46,6 +46,7 @@ sh scripts/prepare_diligent_dataset.sh
 
 # Test PS-FCN on DiLiGenT main dataset using all of the 96 image-light pairs
 CUDA_VISIBLE_DEVICES=0 python eval/run_model.py --retrain data/models/PS-FCN_B_S_32.pth.tar --in_img_num 96
+# You can find the results in data/Training/run_model/
 
 # Test UPS-FCN on DiLiGenT main dataset only using images as input 
 CUDA_VISIBLE_DEVICES=0 python eval/run_model.py --retrain data/models/UPS-FCN_B_S_32.pth.tar --in_img_num 96 --in_light
@@ -84,10 +85,12 @@ If the above command is not working, please manually download the trained model 
 #### Test on the DiLiGenT main dataset
 ```
 CUDA_VISIBLE_DEVICES=0 python eval/run_model.py --retrain data/models/PS-FCN_B_S_32_normalize.pth.tar --in_img_num 96 --normalize --train_img_num 32
+# You can find the results in data/Training/run_model
 ```
 #### Training
 ```
-CUDA_VISIBLE_DEVICES=0 python main.py --concat_data --in_img_num 32 --normalize
+CUDA_VISIBLE_DEVICES=0 python main.py --concat_data --in_img_num 32 --normalize --item normalize
+# You can find checkpoints and results in data/Training/normalize
 ```
 
 <br>

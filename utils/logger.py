@@ -61,5 +61,5 @@ class Logger(object):
 
     def saveNormalResults(self, results, split, epoch, iters):
         save_dir = os.path.join(self.args.log_dir, split)
-        save_name = '%d_%d.jpg' % (epoch, iters)
+        save_name = '%d_%d.png' % (epoch, iters)
         vutils.save_image(results, os.path.join(save_dir, save_name))
