@@ -1,7 +1,7 @@
 # PS-FCN
-**[PS-FCN: A Flexible Learning Framework for Photometric Stereo, ECCV 2018](http://gychen.org/PS-FCN/)**,
+**[PS-FCN: A Flexible Learning Framework for Photometric Stereo, ECCV 2018](https://guanyingc.github.io/PS-FCN/)**,
 <br>
-[Guanying Chen](http://www.gychen.org), [Kai Han](http://www.hankai.org/), [Kwan-Yee K. Wong](http://i.cs.hku.hk/~kykwong/)
+[Guanying Chen](https://guanyingc.github.io/), [Kai Han](http://www.hankai.org/), [Kwan-Yee K. Wong](http://i.cs.hku.hk/~kykwong/)
 <br>
 
 This paper addresses the problem of learning based photometric stereo for non-Lambertian surface.
