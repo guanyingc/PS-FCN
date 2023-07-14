@@ -38,7 +38,7 @@ We provide:
 sh scripts/download_pretrained_models.sh
 # You can find the downloaded model in ./data/models/
 ```
-If the above command is not working, please manually download the trained models from Google Drive ([PS-FCN and UPS-FCN](https://drive.google.com/drive/folders/1VxrPsV8Pg28JCcMZklW1LcBFm4crhK0F?usp=sharing)) and put them in `./data/models/`.
+If the above command is not working, please manually download the trained models from One Drive ([PS-FCN and UPS-FCN](https://connecthkuhk-my.sharepoint.com/:f:/g/personal/u3004356_connect_hku_hk/Ehke8nHlpUdJmyVSw2ANUEEBnQf-aCaSxaNcTr2g274-PQ?e=feT9E2)) and put them in `./data/models/`.
 
 #### Test on the DiLiGenT main dataset
 ```shell
@@ -61,7 +61,7 @@ To train a new PS-FCN model, please follow the following steps:
 # and it takes some times to download and unzip the datasets.
 sh scripts/download_synthetic_datasets.sh
 ```
-If the above command is not working, please manually download the training datasets from Google Drive ([PS Sculpture Dataset and PS Blobby Dataset](https://drive.google.com/drive/folders/1VxrPsV8Pg28JCcMZklW1LcBFm4crhK0F?usp=sharing)) and put them in `./data/datasets/`. 
+If the above command is not working, please manually download the training datasets from One Drive (PS Sculpture Dataset and PS Blobby Dataset) and put them in `./data/datasets/`.
 
 #### Train PS-FCN and UPS-FCN
 ```shell
@@ -82,7 +82,7 @@ CUDA_VISIBLE_DEVICES=0 python main.py --concat_data --in_img_num 32 --in_light -
 sh scripts/download_pretrained_TPAMI_models.sh
 # You can find the downloaded model in ./data/models/
 ```
-If the above command is not working, please manually download the trained model from Google Drive ([PS-FCN_normalize](https://drive.google.com/drive/folders/1VxrPsV8Pg28JCcMZklW1LcBFm4crhK0F?usp=sharing)) and put it in `./data/models/`.
+If the above command is not working, please manually download the trained model from One Drive (PS-FCN_normalize) and put it in `./data/models/`.
 
 #### Test on the DiLiGenT main dataset
 ```shell
