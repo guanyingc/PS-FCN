@@ -38,7 +38,7 @@ We provide:
 sh scripts/download_pretrained_models.sh
 # You can find the downloaded model in ./data/models/
 ```
-If the above command is not working, please manually download the trained models from One Drive ([PS-FCN and UPS-FCN](https://connecthkuhk-my.sharepoint.com/:f:/g/personal/u3004356_connect_hku_hk/Ehke8nHlpUdJmyVSw2ANUEEBnQf-aCaSxaNcTr2g274-PQ?e=feT9E2)) and put them in `./data/models/`.
+If the above command is not working, please manually download the trained models from BaiduYun ([PS-FCN and UPS-FCN](https://pan.baidu.com/s/1WUVu9ibIBh4wM1shTXBuNw?pwd=snyc)) and put them in `./data/models/`. Please note that the checkpoint names end with '.tar', and there is no need to untar them.
 
 #### Test on the DiLiGenT main dataset
 ```shell
@@ -61,7 +61,7 @@ To train a new PS-FCN model, please follow the following steps:
 # and it takes some times to download and unzip the datasets.
 sh scripts/download_synthetic_datasets.sh
 ```
-If the above command is not working, please manually download the training datasets from One Drive (PS Sculpture Dataset and PS Blobby Dataset) and put them in `./data/datasets/`.
+If the above command is not working, please manually download the training datasets from BaiduYun (PS Sculpture Dataset and PS Blobby Dataset) and put them in `./data/datasets/`.
 
 #### Train PS-FCN and UPS-FCN
 ```shell
@@ -76,13 +76,13 @@ CUDA_VISIBLE_DEVICES=0 python main.py --concat_data --in_img_num 32 --in_light -
 # You can find checkpoints and results in data/Training/
 ```
 
-## Data Normalization for Handling SVBRDFs (TPAMI 2020)
+## Data Normalization for Handling SVBRDFs (TPAMI)
 #### Download the trained models
 ```shell
 sh scripts/download_pretrained_TPAMI_models.sh
 # You can find the downloaded model in ./data/models/
 ```
-If the above command is not working, please manually download the trained model from One Drive (PS-FCN_normalize) and put it in `./data/models/`.
+If the above command is not working, please manually download the trained model from BaiduYun (PS-FCN_normalize) and put it in `./data/models/`.
 
 #### Test on the DiLiGenT main dataset
 ```shell
